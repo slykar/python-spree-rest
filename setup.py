@@ -9,8 +9,16 @@ with open(os.path.join(here, 'README.txt')) as f:
 with open(os.path.join(here, 'CHANGES.txt')) as f:
     CHANGES = f.read()
 
+setup_requires = [
+    'pytest-runner'
+]
+
 requires = [
     'pyramid'
+]
+
+tests_require = [
+    'pytest'
 ]
 
 setup(name='spree.rest',
@@ -30,6 +38,8 @@ setup(name='spree.rest',
       packages=find_packages(),
       include_package_data=True,
       zip_safe=False,
-      test_suite='tests',
-      install_requires=requires
+      test_suite='py.test',
+      setup_requires=setup_requires,
+      install_requires=requires,
+      tests_require=tests_require
       )
