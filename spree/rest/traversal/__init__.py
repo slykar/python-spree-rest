@@ -3,5 +3,5 @@ from .endpoints import (
     APIEntityEndpoint,
     APICollectionEndpoint
 )
-from .view import TraversalRESTView
-
+from .views import TraversalRESTView
+from .fields import NodeRef

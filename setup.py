@@ -14,7 +14,8 @@ setup_requires = [
 ]
 
 requires = [
-    'pyramid'
+    'pyramid',
+    'marshmallow'
 ]
 
 tests_require = [

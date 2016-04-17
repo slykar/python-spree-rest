@@ -23,17 +23,19 @@ class OrderList(APICollectionEndpoint):
 class CustomerOrderList(OrderList):
 
     def retrieve(self, request):
-        pass
+        super(CustomerOrderList, self).retrieve(request)
 
     def create(self, request):
         pass
 
 
 class CustomerEntity(APIEntityEndpoint):
-
     endpoints = [
         (r'orders', CustomerOrderList)
     ]
+
+    def update(self, request):
+        pass
 
     def retrieve(self, request):
         pass

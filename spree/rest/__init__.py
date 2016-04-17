@@ -2,6 +2,6 @@ from .traversal import (
     APIEndpoint,
     APIEntityEndpoint,
     APICollectionEndpoint,
-    TraversalRESTView
+    TraversalRESTView,
+    NodeRef
 )
-
