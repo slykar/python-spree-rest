@@ -1,13 +1,13 @@
-from spree.rest import APIEndpoint, APIEntityEndpoint, APICollectionEndpoint
+from spree.rest import APIEndpoint, APIEntity, APICollection
 
 
-class OrderEntity(APIEntityEndpoint):
+class OrderEntity(APIEntity):
 
     def retrieve(self, request):
         pass
 
 
-class OrderList(APICollectionEndpoint):
+class OrderList(APICollection):
 
     endpoints = [
         (r'[0-9]+', OrderEntity)
@@ -29,7 +29,7 @@ class CustomerOrderList(OrderList):
         pass
 
 
-class CustomerEntity(APIEntityEndpoint):
+class CustomerEntity(APIEntity):
     endpoints = [
         (r'orders', CustomerOrderList)
     ]
@@ -41,7 +41,7 @@ class CustomerEntity(APIEntityEndpoint):
         pass
 
 
-class CustomerList(APICollectionEndpoint):
+class CustomerList(APICollection):
 
     endpoints = [
         (r'[0-9]+', CustomerEntity)

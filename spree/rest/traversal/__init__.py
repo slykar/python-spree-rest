@@ -1,7 +1,8 @@
 from .endpoints import (
     APIEndpoint,
-    APIEntityEndpoint,
-    APICollectionEndpoint
+    APIEntity,
+    APICollection,
+    APIAction
 )
-from .views import TraversalRESTView
+from .views import TraversalResourceView
 from .fields import NodeRef
