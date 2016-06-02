@@ -65,7 +65,7 @@ class APIAction(APIEndpoint):
 class APIResource(APIEndpoint):
 
     def retrieve(self, request):
-        raise NotImplementedError
+        raise httpexceptions.HTTPMethodNotAllowed()
 
     def serialize(self, data):
         if self.schema:
@@ -77,11 +77,8 @@ class APICollection(APIResource):
 
     create_schema = None
 
-    def retrieve(self, request):
-        raise NotImplementedError
-
     def create(self, request, deserialized):
-        raise NotImplementedError
+        raise httpexceptions.HTTPMethodNotAllowed()
 
     def before_create(self, request, deserialized):
         pass
@@ -94,11 +91,8 @@ class APIEntity(APIResource):
 
     update_schema = None
 
-    def retrieve(self, request):
-        raise NotImplementedError
-
     def update(self, request, deserialized):
-        raise NotImplementedError
+        raise httpexceptions.HTTPMethodNotAllowed()
 
     def before_update(self, request, deserialized):
         pass
@@ -107,4 +101,4 @@ class APIEntity(APIResource):
         pass
 
     def delete(self, request):
-        pass
+        raise httpexceptions.HTTPMethodNotAllowed()
