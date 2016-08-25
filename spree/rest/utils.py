@@ -1,4 +1,15 @@
 def get_from_settings(settings, prefix='cors.', **kwargs):
+    """
+    Get settings `dict` with keys starting with `prefix`
+    :param settings: settings dictionary
+    :type settings: dict
+    :param prefix: key prefix
+    :type prefix: str
+    :param kwargs: override settings
+    :type kwargs: dict
+    :return: extracted settings dict
+    :rtype: dict
+    """
     options = {
         key[len(prefix):]: settings[key]
         for key in settings
@@ -9,6 +20,14 @@ def get_from_settings(settings, prefix='cors.', **kwargs):
 
 
 def get_option_list(settings, key, default=None):
+    """
+    Return string `settings` value as `list` split by lines
+    :param settings: settings dictionary
+    :param key: dictionary key
+    :param default: default value if `key` is not in `settings`
+    :return: settings value
+    :rtype: str|list[str]
+    """
     if key not in settings:
         return default
 
